@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "328245486614",
+    "firebase_url": "https://newfoodorder-b9cb4.firebaseio.com",
+    "project_id": "newfoodorder-b9cb4",
+    "storage_bucket": "newfoodorder-b9cb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:328245486614:android:4b8b2841eb336d23",
+        "android_client_info": {
+          "package_name": "com.example.android.newfoodorder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "328245486614-5hicuclh2u1dkdiuu07csu37atcbtj64.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.newfoodorder",
+            "certificate_hash": "bd3b82f243162bf7d490330412e32b838bf55ce1"
+          }
+        },
+        {
+          "client_id": "328245486614-p9j1fuo6d1crlj49uefbllfn01k9pmf7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkGgiA5AY6ljdr7-XrpsOvb0miwIJOe6U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "328245486614-p9j1fuo6d1crlj49uefbllfn01k9pmf7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
