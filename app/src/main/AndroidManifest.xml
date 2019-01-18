@@ -6,9 +6,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_face_black_24dp"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -22,7 +22,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddFood" />
-        <activity android:name=".OpenOrders"></activity>
+        <activity android:name=".OpenOrders" />
+        <activity android:name=".MenuList" />
+        <activity android:name=".Starters" />
+        <activity android:name=".MainCourse" />
+        <activity android:name=".Dessert" />
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Main3Activity"
+            android:label="@string/title_activity_main3"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

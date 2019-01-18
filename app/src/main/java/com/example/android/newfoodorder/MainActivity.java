@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Welcome!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -31,13 +32,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void addFoodButtonClicked(View view)
     {
-        Intent addFoodIntent = new Intent(MainActivity.this, AddFood.class);
+        //Intent addFoodIntent = new Intent(MainActivity.this, MenuList.class);
+        //startActivity(addFoodIntent);
+        Intent addFoodIntent = new Intent(MainActivity.this, Main3Activity.class);
         startActivity(addFoodIntent);
     }
 
     public void viewOrders(View view)
     {
+        Toast.makeText(MainActivity.this, "Tap to delete all",
+                Toast.LENGTH_LONG).show();
+
         startActivity(new Intent(MainActivity.this,OpenOrders.class));
+
     }
 
     @Override

@@ -9,15 +9,30 @@
     tools:context="com.example.android.newfoodorder.MainActivity"
     tools:showIn="@layout/activity_main">
 
-   <Button
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="Add Food Item"
-       android:onClick="addFoodButtonClicked"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:src="@drawable/food" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View open Orders"
+
+        android:background="@color/colorPrimary"
+        android:onClick="addFoodButtonClicked"
+        android:text="Add Food Item" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/order" />
+
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Orders"
+        android:background="@color/colorPrimary"
+
         android:onClick="viewOrders"/>
 </LinearLayout>

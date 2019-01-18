@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -24,13 +25,13 @@ public class OpenOrders extends AppCompatActivity {
         mFoodList  = (RecyclerView) findViewById(R.id.orderLayout);
         mFoodList.setHasFixedSize(true);
         mFoodList.setLayoutManager(new LinearLayoutManager(this));
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Orders");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Order");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseRecyclerAdapter <Order, OrderViewHolder> FRBA = new FirebaseRecyclerAdapter<Order, OrderViewHolder>(
+        FirebaseRecyclerAdapter<Order, OrderViewHolder> FRBA = new FirebaseRecyclerAdapter<Order, OrderViewHolder>(
                 Order.class,
                 R.layout.singleorderlayout,
                 OrderViewHolder.class,
@@ -40,6 +41,15 @@ public class OpenOrders extends AppCompatActivity {
             protected void populateViewHolder(OrderViewHolder viewHolder, Order model, int position) {
                 viewHolder.setUserName(model.getUsername());
                 viewHolder.setItemName(model.getItemname());
+               // final String food_key = getRef(position).getKey().toString();
+               /* viewHolder.orderView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                       Intent singleFoodActivity = new Intent(OpenOrders.this, OpenOrders.class);
+                        singleFoodActivity.putExtra("FoodId", food_key);
+                        startActivity(singleFoodActivity);
+                    }
+                });*/
 
             }
         };
@@ -49,18 +59,34 @@ public class OpenOrders extends AppCompatActivity {
     public static class OrderViewHolder extends RecyclerView.ViewHolder
     {
         View orderView;
-      public OrderViewHolder(View itemView)
-      {
-          super(itemView);
-          orderView = itemView;
-      }
+        DatabaseReference databaseReference;
 
-      public void setUserName(String username)
-      {
-          TextView username_content = (TextView) orderView.findViewById(R.id.orderUserName);
-          username_content.setText(username);
+        public OrderViewHolder(View itemView) {
+            super(itemView);
+            orderView = itemView;
 
-      }
+
+
+            orderView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    // *** HOW TO GET THE POSITION FOR DELETE CHILD  *** //
+
+                    databaseReference = FirebaseDatabase.getInstance().getReference("Order");
+                    databaseReference.getRef().removeValue();
+                    Toast.makeText(view.getContext(), "Deleted", Toast.LENGTH_SHORT).show();
+
+                }
+            });
+        }
+
+        public void setUserName(String username)
+        {
+            TextView username_content = (TextView) orderView.findViewById(R.id.orderUserName);
+            username_content.setText(username);
+
+        }
 
         public void setItemName(String itemname)
         {
@@ -68,5 +94,6 @@ public class OpenOrders extends AppCompatActivity {
             itemname_content.setText(itemname);
 
         }
+
     }
 }

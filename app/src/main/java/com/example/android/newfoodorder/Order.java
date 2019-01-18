@@ -5,7 +5,7 @@ package com.example.android.newfoodorder;
  */
 
 public class Order {
-    String username, itemname;
+    String user, itemname;
 
     public Order(){
 
@@ -14,11 +14,11 @@ public class Order {
     public Order(String username, String itemname )
     {
         this.itemname = itemname;
-        this.username = username;
+        this.user = username;
     }
 
     public String getUsername(){
-        return username;
+        return user;
     }
 
     public String getItemname(){
@@ -34,7 +34,7 @@ public class Order {
 
     public void setUsername(String username)
     {
-        this.username = username;
+        this.user = username;
 
     }
 
